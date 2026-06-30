@@ -2,7 +2,7 @@
 
 Submitted by: **Christine Grimadeau**
 
-This web app: **Paws & Pass: Created a discovery engine for finding a preferred dog personality or category, allowing users to progressively filter out traits they do not want in a pet.**
+This web app: **Paws & Pass** is a discovery engine for finding a preferred dog personality or category, allowing users to progressively filter out traits they do not want in a pet.**
 
 Time spent: **X** hours spent in total
 
