@@ -6,7 +6,7 @@ This web app: **Paws & Pals** is an interactive, dynamic web application designe
 
 Time spent: **25** hours spent in total
 
-## Required Features
+## Required Features 🐶
 
 The following **required** functionality is completed: 
 
@@ -40,20 +40,16 @@ The following **additional** features are implemented:
 
 * [ ] List anything else that you added to improve the site's functionality!
 
-## Video Walkthrough
+## Video Walkthrough 🐶
 
 Here's a walkthrough of implemented user stories:
+<img width="1424" height="730" alt="Paws Pals" src="https://github.com/user-attachments/assets/160fa706-c8a8-4245-869e-4eb3c72a3bfc" />
 
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 <!-- Replace this with whatever GIF tool you used! -->
-GIF created with ...  
-<!-- Recommended tools:
-[Kap](https://getkap.co/) for macOS
-[ScreenToGif](https://www.screentogif.com/) for Windows
-[peek](https://github.com/phw/peek) for Linux. -->
+GIF created with LICEcap
 
-## Notes
+## Notes 🐶
 This project was pretty challanging as there aren't many times where I'm dealing with APIs. Those challanges are included and how I fixed them:
 
 ### 1. Handling Asynchronous Data & Conditional Rendering
@@ -74,7 +70,7 @@ Since public APIs typically do not accept query parameters to exclude things (e.
 **Solution:**
 I utilized JavaScript array methods (.some() and .includes()) to parse through the dynamically separated temperament arrays before updating the React state. If a match is found on the client side, the function skips the state commit entirely and cleanly triggers a safe background re-fetch until an unbanned profile lands.
 
-## License
+## License 🐶
 
     Copyright 2026 Christine Grimadeau
 
