@@ -54,8 +54,25 @@ GIF created with ...
 [peek](https://github.com/phw/peek) for Linux. -->
 
 ## Notes
+This project was pretty challanging as there aren't many times where I'm dealing with APIs. Those challanges are included and how I fixed them:
 
-Describe any challenges encountered while building the app.
+### 1. Handling Asynchronous Data & Conditional Rendering
+When the app first loaded, React tried to render the HTML layout immediately. Because the API fetch takes a brief moment to complete, currentDog was initially null, causing the app to crash with a TypeError: Cannot read properties of null error when trying to display properties like .name or .image. 
+<br>
+**Solution:**
+I Implemented conditional rendering guards ({currentDog && (...)}) and fallback loading states. This made sure that the UI layout safely waits until the asynchronous async/await fetch block resolves and commits data to the state hook before attempting to draw the breed panel.
+
+### 2. Mitigating the API "Missing Data" Infinite Loop
+The Dog API contained thousands of user-submitted images, many of which lacked any attached breed or temperament metadata. Originally, the code was written to aggressively reject any profile missing this information and force an immediate recursive re-fetch. This caused a massive hidden loop that fetched dozens of blank objects in milliseconds, freezing the web browser.
+<br>
+**Solution:**
+I Refactored the data extraction logic to include default fallback structures. If an image is fetched without metadata, the code safely intercepts it and injects default text metrics (e.g., 'Mixed Breed Pup', 'Friendly, Playful, Loyal') rather than spinning into an unrestricted network cycle. This kept the app fast and stable.
+
+### 3. Implementing Client-Side Filtering for the Ban List
+Since public APIs typically do not accept query parameters to exclude things (e.g., you cannot send a request asking for a dog that is not part of the Toy group). This meant all the ban logic had to happen purely on the frontend.
+<br>
+**Solution:**
+I utilized JavaScript array methods (.some() and .includes()) to parse through the dynamically separated temperament arrays before updating the React state. If a match is found on the client side, the function skips the state commit entirely and cleanly triggers a safe background re-fetch until an unbanned profile lands.
 
 ## License
 
